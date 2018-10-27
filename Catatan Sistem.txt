@@ -1,0 +1,19 @@
+ 1. Pedoman Penulisan (Bab IV Done)
+ 2. Bahasa asing di judul tidak perlu cetak miring (Progress)
+ 3. Penyetaraan Bahasa Sistem (Done)
+ 4. Grafik realtime (Done
+ 5. Breakdown Use Case Diagram (Done)
+ 6. Jumlah dan Judul Use Case dan Activity Diagram sesuai (Done)
+ 7. Presentasi Prezi, Powerpoint, Slides
+ 8. Untuk menjelaskan lingkungan sistem:
+    1. Use Case Diagram (Done)
+    2. Use Case Naratif (Done)
+    3. Diagram Activity (Done)
+    4. Sequence (Done)
+    5. Class Diagram (Done)
+    6. Deployment Diagram (Done)
+9. Pengujian sebaiknya berupa suatu kasus
+    1 Kasus saja
+10. Kesimpulan dan saran poin per poin berdasarkan tujuan (Done)
+11. Flowchart dihapus (Done)
+12. Hirarki sistem dihapus (Done)
