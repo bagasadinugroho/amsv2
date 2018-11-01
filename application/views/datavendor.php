@@ -33,7 +33,7 @@
             <table id="example23" class="display nowrap table table-hover table-striped table-bordered" cellspacing="0" width="100%">
               <thead>
                 <tr>
-                  <th>ID Vendor</th>
+                  <th>No</th>
                   <th>Vendor Name</th>
                   <th>Address</th>
                   <th>Action</th>
@@ -41,16 +41,16 @@
               </thead>
               <tfoot>
                 <tr>
-                  <th>ID Vendor</th>
+                  <th>No</th>
                   <th>Vendor Name</th>
                   <th>Address</th>
                   <th>Action</th>
                 </tr>
               </tfoot>
               <tbody>
-                <?php foreach ($data as $row) { ?>
+                <?php $no=1; foreach ($data as $row) { ?>
                 <tr>
-                  <td><?php echo $row->id_vendor;?></td>
+                  <td><?php echo $no++;?></td>
                   <td><?php echo $row->name_vendor;?></td>
                   <td><?php echo $row->address;?></td>
                   <td><button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#editVendor<?php echo $row->id_vendor;?>" data-whatever="@mdo"><i class="fas fa-pencil-alt"></i></button>

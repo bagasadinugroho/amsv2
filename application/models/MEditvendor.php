@@ -19,13 +19,14 @@ class MEditvendor extends CI_Model {
 	 * @see https://codeigniter.com/user_guide/general/urls.html
 	 */
 
-	public function pilih_vendor($id_vendor)
-    {
-        $data=$this->db->get_where('asset.asset_vendor', array('id_vendor'=>$id_vendor));
-		// var_dump($data->row()); exit;
-		return $data->row_array();
-    }
-    public function proses_edit($data,$where)
+	// public function pilih_vendor($id_vendor)
+    // {
+    //     $data=$this->db->get_where('asset.asset_vendor', array('id_vendor'=>$id_vendor));
+	// 	// var_dump($data->row()); exit;
+	// 	return $data->row_array();
+    // }
+	
+	public function proses_edit($data,$where)
     {
 		$data=$this->db->update('asset.asset_vendor',$data,$where);
 		// var_dump($data); exit;

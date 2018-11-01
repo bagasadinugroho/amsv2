@@ -23,7 +23,6 @@ class datavendor extends CI_Controller {
 		parent::__construct();
 		$this->load->model('MDatavendor');
 		$this->load->model('MVendor');
-		$this->load->model('MEditvendor');
 
 		if($this->session->userdata('status') != "login"){
 			redirect(base_url("login"));
@@ -39,20 +38,41 @@ class datavendor extends CI_Controller {
 		$this->load->view('datavendor',$data);
 		$this->load->view('body/footer');
 	}
-    
-    public function delete()
+	
+	// <--Delete data dari DB-->
+    // public function delete()
+	// {
+	// 	$id_vendor=$this->uri->segment(3);
+	// 	$where = array ('id_vendor' => $id_vendor);
+	// 	$hasil=$this->MData->delete($where,'asset.asset_vendor');
+	// 	if($hasil) {
+	// 		echo "
+	// 		<script>
+	// 		alert('Sebuah vendor berhasil dihapus');
+	// 			document.location.href='".base_url('datavendor')."';
+	// 		</script>
+	// 		";
+	// 	}
+	// }
+
+	public function delete()
 	{
 		$id_vendor=$this->uri->segment(3);
+		// var_dump($id_master); exit;
+		$status='6';
 		$where = array ('id_vendor' => $id_vendor);
-		$hasil=$this->MData->delete($where,'asset.asset_vendor');
-		if($hasil) {
-			echo "
-			<script>
+        $data = array ('status' => $status
+		);
+		// var_dump($data); die;
+        $hasil=$this->MDatavendor->proses_edit($data, $where);
+        if($hasil) {
+            echo "
+			<script>	
 			alert('Sebuah vendor berhasil dihapus');
 				document.location.href='".base_url('datavendor')."';
 			</script>
 			";
-		}
+        }
 	}
 
 	public function registrasi(){
@@ -60,7 +80,8 @@ class datavendor extends CI_Controller {
 		// var_dump($id); exit;
 		$data = array(
 		'name_vendor' => $this->input->post('name_vendor'),
-        'address' => $this->input->post('address')
+		'address' => $this->input->post('address'),
+		'status' => 4
         );
 		$hasil = $this->MVendor->doRegister($data);
 		if ($hasil) {
@@ -83,7 +104,7 @@ class datavendor extends CI_Controller {
         'name_vendor' => $name_vendor,
         'address' => $address
         );
-        $hasil=$this->MEditvendor->proses_edit($data, $where);
+        $hasil=$this->MDatavendor->proses_edit($data, $where);
         if($hasil) {
             echo "
 			<script>	

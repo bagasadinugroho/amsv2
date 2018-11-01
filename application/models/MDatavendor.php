@@ -21,17 +21,14 @@ class MDatavendor extends CI_Model {
 
 	public function getData()
 	{
-		$data = $this->db->get("asset.asset_vendor");
-		// $this->db->select('id_master, name_asset, sn, model, status');
-		// $data = $this->db->get('asset.asset_master');
-		// var_dump($data->result()); exit;
-		
-		// $data = $this->db->query('SELECT *
-		// 	FROM asset.asset_master, asset.asset_status
-		// 	WHERE asset_master.status = asset_status.kode' );
-			// AND t_m_user.b_active = true');
-		//Query Biasa
+		// $data = $this->db->get("asset.asset_vendor");
+		$data = $this->db->query("SELECT * FROM asset.asset_vendor WHERE status = '4'");
 		return $data->result();
+		
+		// $data = $this->db->query("SELECT *
+		// 	FROM asset.asset_master, asset.asset_status
+		// 	WHERE asset_master.status = asset_status.kode AND asset_master.status = '5'" );
+		// return $data->result();
 	}
 
 	public function delete($where,$data)
@@ -40,5 +37,12 @@ class MDatavendor extends CI_Model {
 		$this->db->delete($data);
 		// $this->db->delete('asset.asset_master', array('id_master' => $id_master));
 		return true;
+	}
+
+	public function proses_edit($data,$where)
+    {
+		$data=$this->db->update('asset.asset_vendor',$data,$where);
+		// var_dump($data); exit;
+        return true;
 	}
 }
