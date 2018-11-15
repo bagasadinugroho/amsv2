@@ -32,9 +32,18 @@ class MNew extends CI_Model {
 		return $data->row();
 	}
 
+	// public function getVendor()
+	// {
+	// 	$stasiun = $this->db->get("asset.asset_vendor");
+	// 	return $stasiun->result();
+	// }
+
 	public function getVendor()
-	{
-		$stasiun = $this->db->get("asset.asset_vendor");
-		return $stasiun->result();
-	}
+    {
+        $this->db->where('asset_vendor.status', '4');
+        $this->db->from('asset.asset_vendor');
+        $vendor = $this->db->get();
+        // var_dump($count); die;
+        return $vendor->result();
+    }
 }

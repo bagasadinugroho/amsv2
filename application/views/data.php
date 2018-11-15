@@ -233,7 +233,8 @@
           <form method="post" action="<?php echo base_url('data/proses_checkout');?>">
             <div class="form-group">
               <label>ID Tag</label>
-              <input type="text" class="form-control" name="id_master" value="<?php echo $row->id_master; ?>" readonly>
+              <input type="text" class="form-control" name="id_master" value="<?php echo $row->id_master; ?>" hidden>
+              <input type="text" class="form-control" value="<?php echo $s_number = str_pad( "$row->id_master", 3, "0", STR_PAD_LEFT ).$row->livret; ?>" readonly>
             </div>
             <div class="form-group">
               <label>Asset Name</label>

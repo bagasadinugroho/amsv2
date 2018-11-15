@@ -6,7 +6,7 @@
     var auto_refresh = setInterval(
     function () {
        $('#load_content').load('index.php/dashboard').fadeIn("slow");
-    }, 1000); // refresh setiap 1000 milliseconds
+    }, 2500); // refresh setiap 2500 milliseconds
 </script>
 <!-- ============================================================== -->
 <!-- Auto Refresh  -->
@@ -73,7 +73,7 @@
         <div class="col-lg-12">
             <div class="card">
                 <div class="card-body">
-                    <h4 class="card-title"><i class="fas fa-chart-bar"></i> Grafik Data Asset</h4>
+                    <h4 class="card-title"><i class="fas fa-chart-bar"></i> Graph of Data Asset</h4>
                     <div id="asset-chart"></div>
                 </div>
             </div>
