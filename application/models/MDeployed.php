@@ -51,4 +51,11 @@ class MDeployed extends CI_Model {
 		$data = $this->db->query('SELECT location, COUNT (*) as jumlah FROM asset.asset_transaction group by location');
 		return $data->result();
 	}
+	public function getGrafik()
+	{
+		$data = $this->db->query("SELECT asset_status.keterangan, COUNT (*) as jumlah FROM asset.asset_master LEFT JOIN asset.asset_status
+		on asset_master.status=asset_status.kode 
+		WHERE asset_master.status in ('1','5','2') group by asset_status.keterangan");
+		return $data->result();
+	}
 }

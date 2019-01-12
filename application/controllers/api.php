@@ -23,7 +23,6 @@ class api extends CI_Controller {
 		$this->load->model('MDeployed');
 	}
 
-
 	public function index()
 	{   
 		if($this->session->userdata('status') != "login"){
@@ -33,5 +32,16 @@ class api extends CI_Controller {
         $chart = $this->MDeployed->getChart();
         // print_r($chart);
         echo json_encode($chart);
-    }
+	}
+	
+	public function grafik()
+	{   
+		if($this->session->userdata('status') != "login"){
+			redirect(base_url("login"));
+		}
+		
+        $grafik = $this->MDeployed->getGrafik();
+        // print_r($chart);
+        echo json_encode($grafik);
+	}
 }

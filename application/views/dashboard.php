@@ -70,11 +70,19 @@
                 </div>
             </div>
         </div>
-        <div class="col-lg-12">
+        <div class="col-lg-6">
             <div class="card">
                 <div class="card-body">
                     <h4 class="card-title"><i class="fas fa-chart-bar"></i> Graph of Data Asset</h4>
                     <div id="asset-chart"></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title"><i class="fas fa-chart-bar"></i> Graph of Deployed Asset</h4>
+                    <div id="deployed-chart"></div>
                 </div>
             </div>
         </div>
